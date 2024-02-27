@@ -1,0 +1,172 @@
+/* General styles */
+:root {
+  --container-max-width: 1200px;
+  --padding-horizontal: 20px;
+  --primary-color: #7f00b1;
+  --secondary-color: #5500a5;
+  --dark-background: #130031;
+  --light-background: #ffffff;
+  --text-color: #fff;
+  --subtitle-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-horizontal);
+}
+
+/* About section */
+.About {
+  padding: 50px 0;
+  background-color: var(--dark-background);
+  text-align: center;
+}
+
+.section__title {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.section__subtitle {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.about__img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.about__img:hover {
+  transform: scale(1.1);
+}
+
+.about__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.about__data {
+  max-width: 60%;
+  text-align: left;
+}
+
+.about__box {
+  background-color: var(--dark-background);
+  box-shadow: 0 0 20px var(--shadow-color);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.about__box:hover {
+  transform: translateY(-10px);
+}
+
+.about__icon {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.about__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.about__subtitle {
+  font-size: 1.5rem;
+  color: var(--subtitle-color);
+  margin-bottom: 20px;
+}
+
+.about_description {
+  font-size: 1.2rem; /* Sets the font size to 1.2rem */
+  color: var(--text-color); /* Sets the text color using a CSS variable */
+  margin-bottom: 20px; /* Adds a margin at the bottom to create space */
+  font-family: Helvetica; /* Sets the font family to Helvetica */
+  text-align: center; /* Centers the text horizontally */
+}
+
+
+/* CV button */
+.CV__button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 15px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  position: relative;
+  animation: jump 0.5s infinite alternate;
+}
+
+.CV__button:hover {
+  background-color: #003a79;
+}
+
+.CV__button__icon {
+  margin-left: 10px;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 992px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .about__img {
+    width: 220px;
+  }
+
+  .about__box {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .about__data {
+    text-align: center;
+  }
+
+  .about_info {
+    justify-content: center;
+  }
+
+  .about_description {
+    padding: 0 1rem; /* Reduce padding on smaller screens */
+    margin-bottom: 1rem; /* Reduce margin bottom on smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about_info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about_description {
+    padding: 0; /* Remove padding on smaller screens */
+    font-size: 1rem; /* Reduce font size on smaller screens */
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .about_info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about_description {
+    font-size: 0.9rem; /* Further reduce font size for very small screens */
+  }
+}
