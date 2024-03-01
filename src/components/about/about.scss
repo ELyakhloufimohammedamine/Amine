@@ -1,0 +1,111 @@
+@import "src/app.scss";
+// General styles
+:root {
+    --container-max-width: 1200px;
+    --padding-horizontal: 20px;
+    --primary-color: #ff6f61; /* Updated primary color */
+    --secondary-color: #ffcc5c; /* Updated secondary color */
+    --dark-background: #1a1a2e; /* Updated dark background */
+    --light-background: #f3f3f3; /* Updated light background */
+    --text-color: #ffffff; /* Updated text color */
+    --subtitle-color: #cccccc;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-horizontal);
+  }
+  
+  // About section
+  .About {
+    padding: 50px 0;
+    background-color: var(--dark-background);
+    text-align: center;
+  }
+
+  .description__container {
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .section__title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .section__subtitle {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+  }
+  
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .about__image {
+    margin-bottom: 20px;
+  }
+  
+  .about__image img {
+    width: 220px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .about__image img:hover {
+    transform: scale(1.05);
+  }
+  
+  .about__content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .about_description {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif; /* Changed font family */
+    text-align: justify; /* Justify text alignment */
+  }
+  
+  // CV button
+  .CV__button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    animation: jump 0.5s infinite alternate;
+  }
+  
+  .CV__button:hover {
+    background-color: #ff8c66; /* Changed hover background color */
+  }
+  
+  .CV__button__icon {
+    margin-left: 10px;
+  }
+  
+  // Adjustments for smaller screens
+  @media screen and (max-width: 576px) {
+    .about__image img {
+      max-width: 180px;
+    }
+  }
+  
