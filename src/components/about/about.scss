@@ -93,10 +93,39 @@
 }
 
   
-  // Adjustments for smaller screens
-  @media screen and (max-width: 576px) {
-    .about__image img {
-      max-width: 180px;
+@media (max-width: 768px) {
+    .about__image {
+      img {
+        width: 150px;
+      }
+    }
+
+    .about__content {
+      .about__description {
+        font-size: 0.9rem;
+      }
+
+      .cv__button {
+        padding: 0.5rem 1.5rem;
+      }
     }
   }
-  
+
+  @media (max-width: 480px) {
+    .about__image {
+      img {
+        width: 120px;
+      }
+    }
+
+    .about__content {
+      .about__description {
+        font-size: 0.85rem;
+      }
+
+      .cv__button {
+        padding: 0.4rem 1.2rem;
+      }
+    }
+  }
+}
