@@ -3,33 +3,37 @@ import AboutImg from "/amine.jpg";
 import CV from "/cv8.pdf";
 import "./about.scss";
 
-
 const About = () => {
-  const hello = "Étudiant en quatrième année, je suis actuellement en cours de validation d'un diplôme en génie informatique. Passionné par la résolution de problèmes complexes, j'ai développé des compétences techniques solides et la capacité à appliquer des concepts informatiques dans des projets concrets.";
-  const about = "Download CV";
+  const hello = `I am a 5th-year computer engineering student, currently pursuing my degree. 
+    Passionate about solving complex problems, I have developed strong technical skills 
+    and the ability to apply computing concepts in real-world projects.`;
+  
+  const about = "Download My CV";
 
   return (
     <section className="About" id="about">
-      <h2 className="section__title">About me</h2>
+      <h2 className="section__title">About Me</h2>
+      
       <div className="about__container">
-      <div className="about__image">
-  <img src={AboutImg} alt="" style={{ width: '220px', height: 'auto' }} />
-</div>
+        {/* Image Section */}
+        <div className="about__image">
+          <img src={AboutImg} alt="Profile" className="about__img" />
+        </div>
 
-<div className="about__content">
-  <div className="description__container">
-    <p className="about_description">{hello}</p>
-  </div>
-  <a href={CV} className="CV__button" download={CV}>
-    {about}
-    <svg
-      className="button__icon"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
+        {/* Content Section */}
+        <div className="about__content">
+          <p className="about_description">{hello}</p>
+          
+          <a href={CV} className="CV__button" download={CV}>
+            {about}
+            <svg
+              className="button__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
               <path
                 d="M15.25 22.7502H9.25C3.82 22.7502 1.5 20.4302 1.5 15.0002V9.00024C1.5 3.57024 3.82 1.25024 9.25 1.25024H14.25C14.66 1.25024 15 1.59024 15 2.00024C15 2.41024 14.66 2.75024 14.25 2.75024H9.25C4.64 2.75024 3 4.39024 3 9.00024V15.0002C3 19.6102 4.64 21.2502 9.25 21.2502H15.25C19.86 21.2502 21.5 19.6102 21.5 15.0002V10.0002C21.5 9.59024 21.84 9.25024 22.25 9.25024C22.66 9.25024 23 9.59024 23 10.0002V15.0002C23 20.4302 20.68 22.7502 15.25 22.7502Z"
                 fill="var(--container-color)"
@@ -48,7 +52,6 @@ const About = () => {
               ></path>
             </svg>
           </a>
-          
         </div>
       </div>
     </section>
