@@ -1,40 +1,32 @@
 @import "src/app.scss";
-// General styles
+// Variables for consistent theming
 :root {
-    --container-max-width: 1200px;
-    --padding-horizontal: 20px;
-    --primary-color: #ff6f61; /* Updated primary color */
-    --secondary-color: #ffcc5c; /* Updated secondary color */
-    --dark-background: #1a1a2e; /* Updated dark background */
-    --light-background: #f3f3f3; /* Updated light background */
-    --text-color: #ffffff; /* Updated text color */
-    --subtitle-color: #cccccc;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  .container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--padding-horizontal);
-  }
-  
- .about {
-  padding: 5rem 0;
-  background-color: #1c1c2b;
-  color: #fff;
+  --primary-color: #ff6f61;
+  --secondary-color: #ffcc5c;
+  --bg-color: #1a1a2e;
+  --text-color: #ffffff;
+  --container-width: 1200px;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+// About Section Styling
+.about {
+  padding: 4rem 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
 
-  .container {
-    max-width: 1200px;
+  .about__container {
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
-  .section-title {
-    font-size: 2.5rem;
+  .about__title {
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-    color: #f0f0f5;
+    margin-bottom: 2.5rem;
+    color: var(--secondary-color);
   }
 
   .about__content {
@@ -43,9 +35,9 @@
     align-items: center;
     gap: 2rem;
 
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
       flex-direction: row;
-      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
@@ -55,77 +47,76 @@
     justify-content: center;
 
     .about__img {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0px 8px 20px var(--shadow-color);
+      object-fit: cover;
     }
   }
 
-  .about__text-container {
-    flex: 1;
+  .about__text {
+    flex: 2;
     text-align: left;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 
     .about__description {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.6;
-      margin-bottom: 2rem;
       color: #e0e0e5;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(var(--primary-color), 10%);
     }
 
-    .cv-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #ff7b54;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #ff552e;
-      }
+    .download-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
     }
   }
 }
 
-  
+// Responsive adjustments
 @media (max-width: 768px) {
-    .about__image {
-      img {
-        width: 150px;
-      }
-    }
-
-    .about__content {
-      .about__description {
-        font-size: 0.9rem;
-      }
-
-      .cv__button {
-        padding: 0.5rem 1.5rem;
-      }
-    }
+  .about__container {
+    padding: 0 1rem;
   }
 
-  @media (max-width: 480px) {
-    .about__image {
-      img {
-        width: 120px;
-      }
-    }
+  .about__title {
+    font-size: 2.2rem;
+  }
 
-    .about__content {
-      .about__description {
-        font-size: 0.85rem;
-      }
+  .about__description {
+    font-size: 1rem;
+  }
 
-      .cv__button {
-        padding: 0.4rem 1.2rem;
-      }
-    }
+  .btn {
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 1.8rem;
+  }
+
+  .about__description {
+    font-size: 0.9rem;
   }
 }
