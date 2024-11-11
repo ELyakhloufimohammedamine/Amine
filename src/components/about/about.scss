@@ -1,40 +1,21 @@
-export default About; @import "src/app.scss";
-// General styles
+@import "src/app.scss";
+
 :root {
-    --container-max-width: 1200px;
-    --padding-horizontal: 20px;
-    --primary-color: #ff6f61; /* Updated primary color */
-    --secondary-color: #ffcc5c; /* Updated secondary color */
-    --dark-background: #1a1a2e; /* Updated dark background */
-    --light-background: #f3f3f3; /* Updated light background */
-    --text-color: #ffffff; /* Updated text color */
-    --subtitle-color: #cccccc;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  .container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--padding-horizontal);
-  }
-  
- .about {
+  --primary-color: #ff6f61;
+  --secondary-color: #ffcc5c;
+  --dark-background: #1a1a2e;
+  --text-color: #ffffff;
+}
+.about {
   padding: 5rem 0;
-  background-color: #1c1c2b;
-  color: #fff;
-  text-align: center;
+  background-color: var(--dark-background);
+  color: var(--text-color);
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .section-title {
+  .about__title {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 2rem;
     color: #f0f0f5;
+    margin-bottom: 2rem;
   }
 
   .about__content {
@@ -43,7 +24,7 @@ export default About; @import "src/app.scss";
     align-items: center;
     gap: 2rem;
 
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -56,10 +37,18 @@ export default About; @import "src/app.scss";
 
     .about__img {
       width: 100%;
-      max-width: 350px;
+      max-width: 350px;  /* Taille maximale pour les écrans plus larges */
       height: auto;
       border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+      @media (max-width: 768px) {
+        max-width: 250px; /* Réduction pour les écrans moyens */
+      }
+
+      @media (max-width: 480px) {
+        max-width: 150px; /* Taille plus petite pour les écrans mobiles */
+      }
     }
   }
 
@@ -76,56 +65,52 @@ export default About; @import "src/app.scss";
     }
 
     .cv-button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding: 1rem 2rem;
-      background-color: #ff7b54;
-      color: #fff;
-      text-transform: uppercase;
+      background-color: var(--primary-color);
+      color: var(--text-color);
       font-weight: 600;
       border-radius: 5px;
+      text-transform: uppercase;
       transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #ff552e;
       }
+
+      .download-icon {
+        margin-left: 0.5rem;
+        fill: #fff;
+      }
     }
   }
-}
 
-  
-@media (max-width: 768px) {
-    .about__image {
-      img {
-        width: 150px;
-      }
-    }
-
+  @media (max-width: 768px) {
     .about__content {
+      flex-direction: column;
+
       .about__description {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
 
-      .cv__button {
-        padding: 0.5rem 1.5rem;
+      .cv-button {
+        padding: 0.8rem 1.6rem;
       }
     }
   }
 
   @media (max-width: 480px) {
-    .about__image {
-      img {
-        width: 120px;
-      }
+    .about__title {
+      font-size: 2rem;
     }
 
-    .about__content {
-      .about__description {
-        font-size: 0.85rem;
-      }
+    .about__description {
+      font-size: 0.9rem;
+    }
 
-      .cv__button {
-        padding: 0.4rem 1.2rem;
-      }
+    .cv-button {
+      padding: 0.6rem 1.2rem;
     }
   }
 }
