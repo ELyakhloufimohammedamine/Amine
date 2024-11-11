@@ -1,44 +1,90 @@
-@import "src/app.scss";
-// Variables for consistent theming
+// Define CSS variables for primary colors in the root or main style file
 :root {
-  --primary-color: #3498db; // Your primary color
-  --primary-color-dark: #2980b9; // Manually darkened color
+  --primary-color: #3498db;         // Your main primary color
+  --primary-color-dark: #2980b9;    // Darker version of primary color for hover or active states
+  --secondary-color: #2ecc71;       // Secondary color example
+  --text-color: #333333;            // Main text color
+  --background-color: #f8f9fa;      // Background color
+  --border-color: #e0e0e0;          // Border color
 }
 
+// Styles for the about section
 .about {
-  background-color: var(--primary-color);
-}
-
-.about:hover {
-  background-color: var(--primary-color-dark);
-}
-
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .about__container {
-    padding: 0 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  
+  // Main heading
+  &__header {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
   }
 
-  .about__title {
-    font-size: 2.2rem;
+  // Subheading styling
+  &__subheader {
+    font-size: 18px;
+    font-weight: semi-bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
   }
 
-  .about__description {
-    font-size: 1rem;
+  // Paragraph styling
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color);
   }
 
-  .btn {
-    padding: 0.8rem 2rem;
-  }
-}
+  // Button styling within the about section
+  &__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-@media (max-width: 480px) {
-  .about__title {
-    font-size: 1.8rem;
+    // Hover effect
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
   }
 
-  .about__description {
-    font-size: 0.9rem;
+  // Image styling within the about section
+  &__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    &__header {
+      font-size: 20px;
+    }
+
+    &__subheader {
+      font-size: 16px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
   }
 }
